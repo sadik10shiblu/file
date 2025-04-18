@@ -1,0 +1,29 @@
+
+
+
+#include<stdio.h>
+int main(){
+
+FILE *file;
+char name[50]="dostoyvoesky";
+int length=strlen(name);
+int i;
+file=fopen("test.txt","w"); //can use (a) instead of a if wanna add new thing but if
+//use (w) then it will overwrite whatever written in the file. 
+if(file==NULL)
+{
+    printf("File doesn't exist");
+}
+else
+{
+    printf("File is opened\n");
+    for(i=0;i<length;i++)
+    {
+        fputc(name[i],file);
+    }
+    printf("File is written successfully\n");
+    fclose(file);
+}
+
+return 0;
+}
